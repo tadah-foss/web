@@ -68,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
             return Response::make(msgpack_pack($data), 200, ['Content-Type' => 'application/x-msgpack']);
         });
 
-        schema();
+        AppServiceProvider::schema();
 
         if (!app()->runningInConsole() && $this->app->environment('production'))
         {
